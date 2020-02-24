@@ -46,5 +46,17 @@ public class EntryHelper {
         }
     }
 
+    public void searchContact(ArrayList<Person> arrayList, String fName) {
+        int count = 0;
+        for (Person person : arrayList) {
+            if (person.getFirstName().equals(fName))
+                count++;
+        }
+        System.out.println(count + " match found!");
+        for (Person person : arrayList) {
+            if (person.getFirstName().equals(fName))
+                System.out.println(person);
+        }
+    }
 
 }
