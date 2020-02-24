@@ -8,6 +8,11 @@ public class Person {
     private ArrayList<Long> phoneNumber;
     private String email;
 
-
+    public Person(String firstName, String lastName, ArrayList<Long> phoneNumber, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+    }
 
 }
