@@ -1,6 +1,7 @@
 package definition;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class EntryHelper {
@@ -40,6 +41,7 @@ public class EntryHelper {
     }
 
     public void showContacts(ArrayList<Person> arrayList) {
+        Collections.sort(arrayList);
         System.out.println("---Here are all your contacts---");
         for (Person person : arrayList) {
             System.out.println(person);
