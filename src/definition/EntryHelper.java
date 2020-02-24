@@ -5,8 +5,7 @@ import java.util.Scanner;
 
 public class EntryHelper {
 
-    public boolean addContact(){
-        Scanner scanner = new Scanner(System.in);
+    public Person addContact(Scanner scanner) {
         ArrayList<Long> contactNumber = new ArrayList<>();
         String flag = "y";
         System.out.println("Please enter the name of the Person");
@@ -15,29 +14,30 @@ public class EntryHelper {
         System.out.print("Last Name: ");
         String lastName = scanner.next();
         while (flag.equals("y")) {
-            System.out.println("Contact Number: ");
+            System.out.print("Contact Number: ");
             contactNumber.add(scanner.nextLong());
-            System.out.println("Would you like to add another contact number? (y/n): ");
+            System.out.print("Would you like to add another contact number? (y/n): ");
             flag = scanner.next();
         }
-        System.out.println("Would you like to add email address? (y/n): ");
+        System.out.print("Would you like to add email address? (y/n): ");
         flag = scanner.next();
         scanner.nextLine();
-        if (flag.equals("y")){
-            Person person = new Person(firstName,lastName,contactNumber,scanner.nextLine());
-            scanner.close();
-            return true;
+        if (flag.equals("y")) {
+            System.out.print("Email Address: ");
+            return new Person(firstName, lastName, contactNumber, scanner.nextLine());
         }
-        Person person = new Person(firstName, lastName, contactNumber, null);
-        scanner.close();
-        return true;
+        return new Person(firstName, lastName, contactNumber, null);
     }
 
-    public boolean deleteContact(Person person){
+    public String deleteContact(ArrayList<Person> arrayList, Scanner scanner) {
         System.out.println("Here are all your contacts: ");
-        System.out.println(person.getFirstName()+" "+person.getLastName());
+        for (int i = 0; i < arrayList.size(); i++)
+            System.out.println((i + 1) + ". " + arrayList.get(i).getFirstName() + " " + arrayList.get(i).getLastName());
 
-        return true;
+        System.out.println("Press the number against the contact to delete it: ");
+        Person p = arrayList.remove(scanner.nextInt() - 1);
+        return p.getFirstName() + " " + p.getLastName();
     }
+
 
 }

@@ -36,7 +36,16 @@ public class Person implements Comparable<Person>{
         final StringBuilder sb = new StringBuilder("-------- * -------- * -------- * --------\n");
         sb.append("First Name: ").append(firstName).append("\n");
         sb.append("Last Name: ").append(lastName).append('\n');
-        sb.append("Contact Number(s): ").append(phoneNumber).append("\n");
+        if (phoneNumber.size() > 1) {
+            for (int i = 0; i < phoneNumber.size() - 1; i++) {
+                sb.append("Contact Number(s): ");
+                sb.append(phoneNumber.get(i)).append(", ");
+
+            }
+            sb.append(phoneNumber.get(phoneNumber.size() - 1));
+            sb.append("\n");
+        } else
+            sb.append("Contact Number: ").append(phoneNumber.get(phoneNumber.size() - 1)).append("\n");
         sb.append("Email: ").append(email).append('\n');
         sb.append("-------- * -------- * -------- * --------");
         return sb.toString();
