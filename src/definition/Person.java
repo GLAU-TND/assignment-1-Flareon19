@@ -31,6 +31,16 @@ public class Person implements Comparable<Person>{
         return email;
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("-------- * -------- * -------- * --------\n");
+        sb.append("First Name: ").append(firstName).append("\n");
+        sb.append("Last Name: ").append(lastName).append('\n');
+        sb.append("Contact Number(s): ").append(phoneNumber).append("\n");
+        sb.append("Email: ").append(email).append('\n');
+        sb.append("-------- * -------- * -------- * --------");
+        return sb.toString();
+    }
 
     @Override
     public int compareTo(Person o) {
