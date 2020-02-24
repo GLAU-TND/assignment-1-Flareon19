@@ -52,11 +52,14 @@ public class EntryHelper {
             if (person.getFirstName().equals(fName))
                 count++;
         }
-        System.out.println(count + " match found!");
-        for (Person person : arrayList) {
-            if (person.getFirstName().equals(fName))
-                System.out.println(person);
-        }
+        if (count > 0) {
+            System.out.println(count + " match found!");
+            for (Person person : arrayList) {
+                if (person.getFirstName().equals(fName))
+                    System.out.println(person);
+            }
+        } else
+            System.out.println("NO RESULTS FOUND!");
     }
 
 }
