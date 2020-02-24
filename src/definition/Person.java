@@ -40,7 +40,6 @@ public class Person implements Comparable<Person>{
             for (int i = 0; i < phoneNumber.size() - 1; i++) {
                 sb.append("Contact Number(s): ");
                 sb.append(phoneNumber.get(i)).append(", ");
-
             }
             sb.append(phoneNumber.get(phoneNumber.size() - 1));
             sb.append("\n");
