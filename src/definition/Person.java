@@ -2,7 +2,7 @@ package definition;
 
 import java.util.ArrayList;
 
-public class Person {
+public class Person implements Comparable<Person>{
     private String firstName;
     private String lastName;
     private ArrayList<Long> phoneNumber;
@@ -29,5 +29,11 @@ public class Person {
 
     public String getEmail() {
         return email;
+    }
+
+
+    @Override
+    public int compareTo(Person o) {
+        return 0;
     }
 }
