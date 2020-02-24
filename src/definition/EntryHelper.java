@@ -39,5 +39,12 @@ public class EntryHelper {
         return p.getFirstName() + " " + p.getLastName();
     }
 
+    public void showContacts(ArrayList<Person> arrayList) {
+        System.out.println("---Here are all your contacts---");
+        for (Person person : arrayList) {
+            System.out.println(person);
+        }
+    }
+
 
 }
