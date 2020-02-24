@@ -33,4 +33,11 @@ public class EntryHelper {
         return true;
     }
 
+    public boolean deleteContact(Person person){
+        System.out.println("Here are all your contacts: ");
+        System.out.println(person.getFirstName()+" "+person.getLastName());
+
+        return true;
+    }
+
 }
