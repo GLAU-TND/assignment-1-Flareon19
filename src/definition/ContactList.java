@@ -27,11 +27,16 @@ public class ContactList<Person> implements ListADT<Person> {
         private Node<E> next;
         private E data;
 
-        public Node<E> getNext() {
+        public Node(Node<E> next, E data) {
+            this.next = next;
+            this.data = data;
+        }
+
+        private Node<E> getNext() {
             return next;
         }
 
-        public E getData() {
+        private E getData() {
             return data;
         }
     }
