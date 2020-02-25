@@ -37,7 +37,7 @@ public class EntryHelper {
 
         System.out.println("Press the number against the contact to delete it: ");
         Person p = arrayList.remove(scanner.nextInt() - 1);
-        return p.getFirstName() + " " + p.getLastName();
+        return p.getFirstName() + " " + p.getLastName() + "'s contact deleted from list!";
     }
 
     public void showContacts(ArrayList<Person> arrayList) {

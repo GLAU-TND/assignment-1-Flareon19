@@ -50,7 +50,7 @@ public class Main {
                     break;
                 }
                 default:
-                    System.out.println("Invalid Selection! Please try again:");
+                    System.out.println("Invalid Selection! Please try again ");
             }
         }
     }
