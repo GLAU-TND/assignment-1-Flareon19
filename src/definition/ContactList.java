@@ -12,7 +12,13 @@ public class ContactList<Person> implements ListADT<Person> {
     }
 
     private void addFirst(Person element) {
+        head = new Node<>(head, element);
+        size++;
+    }
 
+    public void addAfter(Person element, Node<Person> node) {
+        node.next = new Node<>(node, element);
+        size++;
     }
 
     @Override
