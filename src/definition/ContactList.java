@@ -22,4 +22,8 @@ public class ContactList<Person> implements ListADT<Person> {
     public int search(Person element) {
         return 0;
     }
+
+    private class Node {
+
+    }
 }
