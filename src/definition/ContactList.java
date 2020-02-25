@@ -32,12 +32,21 @@ public class ContactList<Person> implements ListADT<Person> {
             this.data = data;
         }
 
+        private Node(E data) {
+            this.data = data;
+        }
+
         private Node<E> getNext() {
             return next;
         }
 
         private E getData() {
             return data;
+        }
+
+        @Override
+        public String toString() {
+            return "Node{" + "data=" + data + "}";
         }
     }
 }
