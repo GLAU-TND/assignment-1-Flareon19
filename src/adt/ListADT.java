@@ -1,4 +1,5 @@
 package adt;
 
-public interface ListADT {
+public interface ListADT<Person> {
+
 }
