@@ -1,4 +1,4 @@
 package definition;
 
-public class ContactList {
+public class ContactList<Person> {
 }
