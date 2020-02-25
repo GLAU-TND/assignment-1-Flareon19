@@ -21,6 +21,15 @@ public class ContactList<Person> implements ListADT<Person> {
         size++;
     }
 
+    private void add(int index, Person element) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException(Integer.toString(index));
+        } else if (index == 0) {
+            addFirst(element);
+        }
+
+    }
+
     @Override
     public void sort() {
 
