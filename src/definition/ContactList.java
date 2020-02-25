@@ -24,6 +24,8 @@ public class ContactList<Person> implements ListADT<Person> {
     }
 
     private static class Node<E> {
+        private Node<E> next;
+        private E data;
 
     }
 }
