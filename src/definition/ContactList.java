@@ -26,8 +26,17 @@ public class ContactList<Person> implements ListADT<Person> {
             throw new IndexOutOfBoundsException(Integer.toString(index));
         } else if (index == 0) {
             addFirst(element);
+        } else {
+            addAfter(element, getLastNode());
         }
+    }
 
+    private Node<Person> getLastNode() {
+        Node<Person> temp = head;
+        while (temp.getNext() != null) {
+            temp = temp.getNext();
+        }
+        return temp;
     }
 
     @Override
