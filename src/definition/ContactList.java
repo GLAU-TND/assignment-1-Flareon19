@@ -23,7 +23,7 @@ public class ContactList<Person> implements ListADT<Person> {
         return 0;
     }
 
-    private class Node {
+    private static class Node<E> {
 
     }
 }
