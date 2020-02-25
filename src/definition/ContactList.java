@@ -3,6 +3,9 @@ package definition;
 import adt.ListADT;
 
 public class ContactList<Person> implements ListADT<Person> {
+    private Node<Person> head = null;
+    private int size = 0;
+
     @Override
     public void add(Person element) {
 
