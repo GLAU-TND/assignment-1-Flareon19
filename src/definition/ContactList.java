@@ -11,6 +11,10 @@ public class ContactList<Person> implements ListADT<Person> {
 
     }
 
+    private void addFirst(Person element) {
+
+    }
+
     @Override
     public void sort() {
 
