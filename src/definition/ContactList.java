@@ -27,7 +27,7 @@ public class ContactList<Person> implements ListADT<Person> {
         private Node<E> next;
         private E data;
 
-        public Node(Node<E> next, E data) {
+        private Node(Node<E> next, E data) {
             this.next = next;
             this.data = data;
         }
