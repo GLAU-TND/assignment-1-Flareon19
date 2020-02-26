@@ -1,14 +1,14 @@
 package definition;
 
-import java.util.ArrayList;
+import java.util.Objects;
 
 public class Person implements Comparable<Person>{
     private String firstName;
     private String lastName;
-    private ArrayList<Long> phoneNumber;
+    private ContactList<Long> phoneNumber;
     private String email;
 
-    public Person(String firstName, String lastName, ArrayList<Long> phoneNumber, String email) {
+    public Person(String firstName, String lastName, ContactList<Long> phoneNumber, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
@@ -23,7 +23,7 @@ public class Person implements Comparable<Person>{
         return lastName;
     }
 
-    public ArrayList<Long> getPhoneNumber() {
+    public ContactList<Long> getPhoneNumber() {
         return phoneNumber;
     }
 
@@ -48,6 +48,22 @@ public class Person implements Comparable<Person>{
         sb.append("Email: ").append(email).append('\n');
         sb.append("-------- * -------- * -------- * --------");
         return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Person)) return false;
+        Person person = (Person) o;
+        return getFirstName().equals(person.getFirstName()) &&
+                getLastName().equals(person.getLastName()) &&
+                getPhoneNumber().equals(person.getPhoneNumber()) &&
+                Objects.equals(getEmail(), person.getEmail());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getFirstName(), getLastName(), getPhoneNumber(), getEmail());
     }
 
     @Override

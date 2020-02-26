@@ -1,13 +1,11 @@
 package definition;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Scanner;
 
 public class EntryHelper {
 
     public Person addContact(Scanner scanner) {
-        ArrayList<Long> contactNumber = new ArrayList<>();
+        ContactList<Long> contactNumber = new ContactList<>();
         String flag = "y";
         System.out.println("Please enter the name of the Person");
         System.out.print("First Name: ");
@@ -30,7 +28,7 @@ public class EntryHelper {
         return new Person(firstName, lastName, contactNumber, null);
     }
 
-    public String deleteContact(ArrayList<Person> arrayList, Scanner scanner) {
+    public String deleteContact(ContactList<Person> arrayList, Scanner scanner) {
         System.out.println("Here are all your contacts: ");
         for (int i = 0; i < arrayList.size(); i++)
             System.out.println((i + 1) + ". " + arrayList.get(i).getFirstName() + " " + arrayList.get(i).getLastName());
@@ -40,25 +38,25 @@ public class EntryHelper {
         return p.getFirstName() + " " + p.getLastName() + "'s contact deleted from list!";
     }
 
-    public void showContacts(ArrayList<Person> arrayList) {
-        Collections.sort(arrayList);
+    public void showContacts(ContactList<Person> arrayList) {
+        //Collections.sort(arrayList);
         System.out.println("---Here are all your contacts---");
-        for (Person person : arrayList) {
-            System.out.println(person);
+        for (int i = 0; i < arrayList.size(); i++) {
+            System.out.println(arrayList.get(i));
         }
     }
 
-    public void searchContact(ArrayList<Person> arrayList, String fName) {
+    public void searchContact(ContactList<Person> arrayList, String fName) {
         int count = 0;
-        for (Person person : arrayList) {
-            if (person.getFirstName().equals(fName))
+        for (int i = 0; i < arrayList.size(); i++) {
+            if (arrayList.get(i).getFirstName().equals(fName))
                 count++;
         }
         if (count > 0) {
             System.out.println(count + " match found!");
-            for (Person person : arrayList) {
-                if (person.getFirstName().equals(fName))
-                    System.out.println(person);
+            for (int i = 0; i < arrayList.size(); i++) {
+                if (arrayList.get(i).getFirstName().equals(fName))
+                    System.out.println(arrayList.get(i));
             }
         } else
             System.out.println("NO RESULTS FOUND!");
